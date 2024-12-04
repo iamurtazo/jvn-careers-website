@@ -2,9 +2,9 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route('/adinco')
+@app.route('/')
 def home():
-    return render_template('adinco.html', active_page='home')
+    return render_template('index.html', active_page='home')
 
 @app.route('/questions')
 def questions():
@@ -23,4 +23,4 @@ def ask_question():
     return render_template('ask_question.html', active_page='ask_question')
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)
